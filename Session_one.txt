@@ -1,0 +1,45 @@
+Commands in 1st session in Linux to be used 
+1.uname
+2.uname -a 
+3.whoami
+4.pwd
+Normally there are 2 types of paths . 1 is root and other is normal user. 
+whoami will tell you where are you ? 
+5.cd /    will take u to root 
+6.pwd     in root -> the output will tell you that you are in root now 
+7.exit ->  to get out from the root 
+8.adduser user1
+9.cd /
+10.sudo su 
+11.then only we can add user because the root can only add the users . 
+12.adduser user1
+13.passwd user1
+14.exit   to get out of the root
+In Linux there is difference between the $ and #  symbols . user and root.
+15. cd
+16. cat /etc/passwd  the pass word of user it will list down 
+17. ls
+18. ls -a
+19. ls -l
+20. ls -al
+21. files with .  are hidden in linux
+22. 
+
+===================
+git status
+git add Readme.md or
+git add *
+
+git commit -m "This is my first try"
+git commit -am ""  -> this works at times or not 
+else git commit -a
+
+echo "# my_first_repo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/mail2sidh/my_first_repo.git
+git push -u origin master
+…or push an existing repository from the command line
+git remote add origin https://github.com/mail2sidh/my_first_repo.git
+git push -u origin master

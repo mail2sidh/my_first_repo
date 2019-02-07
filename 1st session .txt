@@ -1,0 +1,44 @@
+For Amazon Linux 2 or the Amazon Linux AMI, the user name is ec2-user.
+
+For a Centos AMI, the user name is centos.
+
+For a Debian AMI, the user name is admin or root.
+
+For a Fedora AMI, the user name is ec2-user or fedora.
+
+For a RHEL AMI, the user name is ec2-user or root.
+
+For a SUSE AMI, the user name is ec2-user or root.
+
+For an Ubuntu AMI, the user name is ubuntu.
+
+
+What happens in the background when i type a URL  ?
+
+Basic answer to this question is 
+1. Browser first check the cache ; If the requested object is in cache and is fresh then skip to #9 .
+2. Browser asks OS for server IP address 
+3. OS makes a DNS lookup and replies the IP address back to the Browser .
+4. Browser Opens a TCP connection to server (This is much more complex with HTTPS ) 
+5. Browser send the HTTP request by TCP connection.
+6. Browser recieves HTTP response and may close the TCP connection , or reuse it for another request . 
+7. Browser checks if the response is a direct or conditional response . 3xx result status codes. Authorisation request -401 , Error - 4xx and 5xx , etc..... These are handles differently than normal response 2xx. 
+8. If cacheable , Response is stored in the cache . 
+9. Browser decodes the response (If it is zipped )
+10.Browser determines what to do with the response ( if it is a HTML page , is it an image or is it an sound clip ? 
+11.Browser renders response , or offers a download dialog for unrecognized types. 
+
+there are many other things happening in parallel to this (processing typed-in address, speculative prefetching, adding page to browser history, displaying progress to user, notifying plugins and extensions, rendering the page while it's downloading, pipelining, connection tracking for keep-alive, cookie management, checking for malicious content etc.) - and the whole operation gets an order of magnitude more complex with HTTPS (certificates and ciphers and pinning)
+
+
+This is how I would explain it:
+
+You enter a URL into a web browser
+The browser looks up the IP address for the domain name via DNS
+The browser sends a HTTP request to the server
+The server sends back a HTTP response
+The browser begins rendering the HTML
+The browser sends requests for additional objects embedded in HTML (images, css, JavaScript) and repeats steps 3-5.
+Once the page is loaded, the browser sends further async requests as needed.
+
+ 
